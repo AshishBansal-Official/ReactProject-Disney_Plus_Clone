@@ -23,7 +23,6 @@ const Home = () => {
   let trendings = [];
 
   useEffect(() => {
-    console.log('I am called')
     getDocs(collection(db, 'movies')).then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         switch (doc.data().type) {

@@ -7,7 +7,7 @@ import { getStorage } from "firebase/storage";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB72ZCrdTs2KR6gh2D066or_Gc6BtFxbI8",
+    apiKey: process.env.REACT_APP_API_KEY,
     authDomain: "disney-plus-clone-481e7.firebaseapp.com",
     projectId: "disney-plus-clone-481e7",
     storageBucket: "disney-plus-clone-481e7.appspot.com",
@@ -26,29 +26,3 @@ const storage = getStorage(app);
 
 export {auth, provider, storage}
 export default db;
-
-// function googleSignInPopup(provider) {
-//     // [START auth_google_signin_popup]
-//     const { getAuth, signInWithPopup, GoogleAuthProvider } = require("firebase/auth");
-    
-//     const auth = getAuth();
-//     signInWithPopup(auth, provider)
-//       .then((result) => {
-//         // This gives you a Google Access Token. You can use it to access the Google API.
-//         const credential = GoogleAuthProvider.credentialFromResult(result);
-//         const token = credential.accessToken;
-//         // The signed-in user info.
-//         const user = result.user;
-//         // ...
-//       }).catch((error) => {
-//         // Handle Errors here.
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
-//         // The email of the user's account used.
-//         const email = error.customData.email;
-//         // The AuthCredential type that was used.
-//         const credential = GoogleAuthProvider.credentialFromError(error);
-//         // ...
-//       });
-//     // [END auth_google_signin_popup]
-//   }
